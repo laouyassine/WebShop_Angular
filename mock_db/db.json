@@ -1,0 +1,76 @@
+{
+  "orders": [
+    {
+      "tjmHt": 1200,
+      "nbJours": 5,
+      "tva": 20,
+      "state": "OPTION",
+      "typePresta": "Application2024",
+      "client": "Capgemini",
+      "comment": "",
+      "id": 1
+    },
+    {
+      "tjmHt": 1200,
+      "nbJours": 1,
+      "tva": 20,
+      "state": "CONFIRMED",
+      "typePresta": "formation",
+      "client": "Capgemini",
+      "comment": null,
+      "id": 3
+    },
+    {
+      "tjmHt": 1200,
+      "nbJours": 12,
+      "tva": 20,
+      "state": "CANCELLED",
+      "typePresta": "formation2023",
+      "client": "Capgemini",
+      "comment": "",
+      "id": 4
+    }
+  ],
+  "clients": [
+    {
+      "state": "INACTIVE",
+      "tva": 20,
+      "id": 1,
+      "name": "Capgemini",
+      "totalCaHt": 120000,
+      "comment": "un comment pour client modis"
+    },
+    {
+      "state": "ACTIVE",
+      "tva": 20,
+      "id": 2,
+      "name": "Modis",
+      "totalCaHt": 120000,
+      "comment": "un comment pour client modis"
+    },
+    {
+      "tva": 20,
+      "state": "INACTIVE",
+      "name": "modis",
+      "totalCaHt": 0,
+      "comment": "rsger",
+      "id": 3
+    },
+    {
+      "state": "ACTIVE",
+      "tva": 20,
+      "id": 4,
+      "name": "Formation 8",
+      "totalCaHt": null,
+      "comment": null
+    },
+    {
+      "state": "ACTIVE",
+      "tva": 20,
+      "id": 5,
+      "name": null,
+      "totalCaHt": null,
+      "comment": null
+    }
+  ]
+}

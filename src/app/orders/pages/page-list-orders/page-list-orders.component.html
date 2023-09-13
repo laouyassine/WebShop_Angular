@@ -1,0 +1,48 @@
+<h1 class ="titre-form">Liste des Commandes</h1>
+<!-- string interpolation -->
+<!-- <ul>
+    <li *ngFor='let item of tab'>
+      {{ item.client }}
+    </li>
+  </ul> -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col" *ngFor='let header of headers'>
+          {{ header }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let obj of tab'>
+        <th><button (click)='goToEdit(obj)'>Editer</button></th>
+        <td>{{ obj.typePresta | uppercase}}</td>
+        <td>{{ obj.client}}</td>
+        <td> {{ obj.nbJours}}</td>
+        <td> {{ obj.tjmHt}}</td>
+        <!-- <td> {{ obj.tjmHt | total :obj.nbJours | currency }}</td>
+        <td> {{ obj.tjmHt | total : obj.nbJours : obj.tva | currency }}</td> -->
+        <td> {{  obj | total | currency }}</td>
+      <td> {{ obj| total : true | currency }} </td>
+        <!-- <td [ngClass]="{
+          'state-cancelled': obj.state === 'CANCELLED',
+          'state-option': obj.state === 'OPTION',
+          'state-confirmed': obj.state === 'CONFIRMED'
+        }" > {{ obj.state}}</td> -->
+        <td appState [stateObj]="obj.state">
+          <select class="form-control" id="state" (change)='changeState(obj, $event)'>
+
+            <option *ngFor="let state of states" [value]="state" [selected]="state === obj.state">{{ state }}</option>
+          </select>
+        </td>
+        
+    
+      </tr>
+  
+    </tbody>
+  </table>
+  <app-btn 
+  title="Ajouter" 
+  routeInfo="/orders/add" 
+  styleBtn="btn btn-warning">
+</app-btn>

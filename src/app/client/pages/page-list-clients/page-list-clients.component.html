@@ -1,0 +1,35 @@
+<h1 class = 'titre-form'>Liste des clients</h1>
+<!-- string interpolation -->
+<!-- <ul>
+    <li *ngFor='let item of tab'>
+      {{ item.client }}
+    </li>
+  </ul> -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col" *ngFor='let header of headers'>
+          {{ header }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let obj of tabClients'>
+        <th>Editer</th>
+        <td appState [stateObj]='obj.state'>{{obj.state}}</td>  
+        <td>{{ obj.tva}}</td>
+        <td> {{ obj.id}}</td>
+        <td> {{ obj.name}}</td>
+        <td> {{ obj.totalCaHt  | currency}}</td>
+        <td> {{ obj.totalCaHt | calcul :obj.tva | currency }}</td>
+        <td> {{ obj.comment}}</td>
+  
+      </tr>
+  
+    </tbody>
+  </table>
+  <app-btn 
+  title="Ajouter" 
+  routeInfo="/clients/add" 
+  styleBtn="btn btn-primary">
+</app-btn>

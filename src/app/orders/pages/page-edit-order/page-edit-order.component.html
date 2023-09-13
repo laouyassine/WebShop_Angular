@@ -1,0 +1,21 @@
+
+<!-- faire passer une valeur de titre aux templates -->
+
+<app-template-container [title]='titre'>
+
+  <div class="container" *ngIf='init'>
+    <app-form-order  [objOrder]='init'
+     (submitted)='onEdit($event)'
+      (deleted)='onDelete($event)'></app-form-order>
+  </div>
+  
+<!-- pour message d'attente si la cnx est lente -->
+  <div class="container" *ngIf='!init'>
+    <div class="spinner-grow" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      </div>
+
+</app-template-container>
+
+

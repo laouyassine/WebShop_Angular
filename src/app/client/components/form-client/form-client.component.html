@@ -1,0 +1,53 @@
+<p class = "titre-form">Ajouter un client</p>
+
+
+<div class="container">
+      <form [formGroup]='form' (ngSubmit)='onSubmit()'>
+
+    
+       
+        <div class="form-group" class="marge">
+          <label for="state">state</label>
+          <select class="form-control" id="state" formControlName='state'>
+
+            <option *ngFor='let state of clientStates' [value]='state'> {{state}} </option>
+      
+      
+          </select>
+        </div>
+      
+        <div class="form-group">
+          <label for="nbJours">tva</label>
+          <input type="number" class="form-control" id="tva" formControlName="tva">
+        </div>
+      
+        <div class="form-group">
+          <label for="tjmHt">id</label>
+          <input type="number" class="form-control" id="id" formControlName='id'>
+        </div>
+      
+        <div class="form-group">
+          <label for="tva">name</label>
+          <input type="text" class="form-control" id="name" formControlName="name" >
+        </div>
+      
+        <div class="form-group">
+          <label for="state">totalCaHt</label>
+          <input class="form-control" id="totalCaHt" formControlName="totalCaHt">
+        </div>
+      
+      
+
+        <div class="form-group">
+            <label for="comment">comment</label>
+            <input type="text" class="form-control" id="comment" formControlName="comment">
+          </div>
+      
+        
+          <!-- <button [disabled]="form.invalid" class='btn btn-primary' type='submit'>Valider</button> -->
+          <button  class='btn btn-primary' type='submit'>Valider</button>
+
+        </form>
+        </div>
+        <!-- ici this.form.invalid renvoie true ou false -->
+        <!-- invalid : {{ form.invalid}} -->
